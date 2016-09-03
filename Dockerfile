@@ -1,2 +1,3 @@
-FROM progrium/busybox
-RUN opkg-install curl bash ca-certificates openssl-util
+FROM alpine:latest
+RUN apk update && apk add bash openssl curl ca-certificates \
+    && rm  /var/cache/apk/*.tar.gz
